@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Images Required
+
+Please add the following images to the `/public` folder:
+
+- `atar-hero.jpg` - Main hero image (portrait of Atar, recommended: 600x750px or similar aspect ratio)
+- `atar-about.jpg` - Profile picture for About section (circular, recommended: 256x256px minimum)
+- `testimonial-1.jpg` - Testimonial profile picture 1 (circular, recommended: 64x64px minimum)
+- `testimonial-2.jpg` - Testimonial profile picture 2 (circular, recommended: 64x64px minimum)
+- `testimonial-3.jpg` - Testimonial profile picture 3 (circular, recommended: 64x64px minimum)
+
+All images should be in JPG or PNG format and optimized for web use.
+
 ## Getting Started
 
 First, run the development server:
