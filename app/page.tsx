@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Heart, Users, BookOpen, MessageCircle, Star, Mail, Phone, MapPin, Send, Sparkles } from "lucide-react";
+import { Heart, Users, BookOpen, MessageCircle, Star, Mail, Phone, MapPin, Send, Share2 } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -248,8 +248,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-light text-text-primary mb-6 tracking-tight">פלאי ההורות</h2>
+            <div className="w-20 h-0.5 bg-soft-green mx-auto"></div>
+            <p className="text-lg text-text-secondary mt-8 max-w-2xl mx-auto font-light">
+              רגעים קסומים של חיבור, צמיחה ואהבה בין הורים לילדים
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[1, 2, 3, 4].map((num) => (
+              <div
+                key={num}
+                className="relative group overflow-hidden rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 aspect-square"
+              >
+                <Image
+                  src={`/example-${num}.jpg`}
+                  alt={`רגע קסום של הורות - תמונה ${num}`}
+                  width={400}
+                  height={400}
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-24 bg-white">
+      <section id="testimonials" className="py-24 bg-beige-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl sm:text-5xl font-light text-text-primary mb-6 tracking-tight">מה אומרים עליי</h2>
@@ -299,7 +329,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <p className="text-text-secondary leading-relaxed font-light text-lg">"{testimonial.text}"</p>
+                <p className="text-text-secondary leading-relaxed font-light text-lg">&ldquo;{testimonial.text}&rdquo;</p>
               </div>
             ))}
           </div>
@@ -326,9 +356,20 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-medium text-text-primary mb-1">טלפון</div>
-                    <a href="tel:+972501234567" className="text-text-secondary hover:text-soft-green transition-colors font-light">
-                      050-123-4567
+                    <a href="tel:+972522713770" className="text-text-secondary hover:text-soft-green transition-colors font-light">
+                      052-2713770
                     </a>
+                    <div className="mt-2">
+                      <a 
+                        href="https://wa.me/972522713770" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-soft-green hover:text-soft-green-dark transition-colors font-light text-sm flex items-center gap-2"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        תוכלו לשלוח לי הודעה בקישור הזה
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -337,8 +378,8 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-medium text-text-primary mb-1">אימייל</div>
-                    <a href="mailto:atar@example.com" className="text-text-secondary hover:text-clay transition-colors font-light">
-                      atar@example.com
+                    <a href="mailto:atartasa@gmail.com" className="text-text-secondary hover:text-clay transition-colors font-light">
+                      atartasa@gmail.com
                     </a>
                   </div>
                 </div>
@@ -349,6 +390,34 @@ export default function Home() {
                   <div>
                     <div className="font-medium text-text-primary mb-1">מיקום</div>
                     <div className="text-text-secondary font-light">פגישות אישיות וזום</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-light-pink w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <Share2 className="w-6 h-6 text-clay" strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <div className="font-medium text-text-primary mb-1">רשתות חברתיות</div>
+                    <div className="flex flex-col gap-2 mt-2">
+                      <a 
+                        href="https://www.instagram.com/atartasa.parenting?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-text-secondary hover:text-clay transition-colors font-light text-sm flex items-center gap-2"
+                      >
+                        <span className="w-2 h-2 rounded-full bg-clay"></span>
+                        Instagram
+                      </a>
+                      <a 
+                        href="https://www.facebook.com/profile.php?id=1247185027&ref=ac_edit_ig_profile_ac" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-text-secondary hover:text-clay transition-colors font-light text-sm flex items-center gap-2"
+                      >
+                        <span className="w-2 h-2 rounded-full bg-clay"></span>
+                        Facebook
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
